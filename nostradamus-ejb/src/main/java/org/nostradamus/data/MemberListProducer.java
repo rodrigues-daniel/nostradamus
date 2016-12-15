@@ -31,7 +31,7 @@ import org.nostradamus.model.Member;
 public class MemberListProducer {
 
     @Inject
-    private PostgreRepository memberRepository;
+    private MemberRepository memberRepository;
 
     private List<Member> members;
 

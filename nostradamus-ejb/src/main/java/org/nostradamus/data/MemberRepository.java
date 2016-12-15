@@ -27,10 +27,16 @@ import java.util.List;
 import org.nostradamus.model.Member;
 
 @ApplicationScoped
-public class PostgreRepository {
+public class MemberRepository {
 
     @Inject
-    private EntityManager em;
+    private EntityManager em; 
+   
+    
+    
+    
+   
+    
 
     public Member findById(Long id) {
         return em.find(Member.class, id);
