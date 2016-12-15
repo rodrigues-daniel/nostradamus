@@ -40,7 +40,7 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.nostradamus.data.MemberRepository;
+import org.nostradamus.data.PostgreRepository;
 import org.nostradamus.model.Member;
 import org.nostradamus.service.MemberRegistration;
 
@@ -59,7 +59,7 @@ public class MemberResourceRESTService {
     private Validator validator;
 
     @Inject
-    private MemberRepository repository;
+    private PostgreRepository repository;
 
     @Inject
     MemberRegistration registration;
