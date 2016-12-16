@@ -13,6 +13,7 @@ public class Registrador {
 	
 	public void registrar(Object obj) throws Exception{
 		em.persist(obj);
+		System.out.println("foi salvo pelo EJB");
 	}
 
 }

@@ -16,34 +16,29 @@ public class MapaConroller {
 	@Inject
 	private Registrador registrador;
 
-	private Mapa mapa;
+	private Mapa novoMapa;
+	
+	
+	
+	public void registrar() throws Exception{
+		
+		registrador.registrar(novoMapa);
+		System.out.println("Registrado!");
+	}
+	
+	
+	
 
 	@Produces
 	@Named
-	public Mapa novoMapa() {
-
-		return mapa;
-
+	public Mapa getNovoMapa() {
+		return novoMapa;
 	}
 
+	
 	@PostConstruct
-	public void initNovoRegistro() {
-
-		mapa = new Mapa();
-
-	}
-
-	public void registrar() throws Exception {
-
-		try {
-			
-			registrador.registrar(mapa);
-			initNovoRegistro();
-
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-
+	public void initNovoMapa() {
+		novoMapa = new Mapa();
 	}
 
 }

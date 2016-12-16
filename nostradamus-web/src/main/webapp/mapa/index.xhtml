@@ -11,7 +11,13 @@
 </h:head>
 <h:body>
 
-	<h:outputText value="Valor do Texto" />
+	<h:form>
+	<h:inputText value="#{novoMapa.logradouro}" /><br/>
+	
+ 
+	
+	<h:commandButton action="#{mapaConroller.registrar}"   value="salvar" />
+	</h:form>
 
 
 </h:body>
