@@ -30,11 +30,7 @@ import org.nostradamus.model.Member;
 public class MemberRepository {
 
     @Inject
-    private EntityManager em; 
-   
-    
-    
-    
+    private EntityManager em;   
    
     
 

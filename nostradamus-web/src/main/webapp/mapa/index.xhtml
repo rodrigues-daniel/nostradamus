@@ -10,15 +10,15 @@
 
 </h:head>
 <h:body>
-
 	<h:form>
-	<h:inputText value="#{novoMapa.logradouro}" /><br/>
-	
- 
-	
-	<h:commandButton action="#{mapaConroller.registrar}"   value="salvar" />
+	<h:panelGrid columns="2">
+		Rua: <h:inputText  value="#{novoMapa.logradouro}"/>
+		Numero: <h:inputText   />
+		Nodo: <h:inputText />
+		Latitude: <h:inputText  />
+		Longitude: <h:inputText />
+		<h:commandButton    action="#{mapaConroller.registrar}"  value="Registrar" />	
+	</h:panelGrid>	 
 	</h:form>
-
-
 </h:body>
 </html>
