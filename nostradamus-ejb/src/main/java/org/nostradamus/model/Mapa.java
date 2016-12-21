@@ -27,10 +27,10 @@ public class Mapa implements Serializable {
 	private String numero;
 
 	@Column
-	private String latitude;
+	private double latitude;
 
 	@Column
-	private String longitude;
+	private double longitude;
 
 	public Long getId() {
 		return this.id;
@@ -89,19 +89,19 @@ public class Mapa implements Serializable {
 		this.numero = numero;
 	}
 
-	public String getLatitude() {
+	public double getLatitude() {
 		return latitude;
 	}
 
-	public void setLatitude(String latitude) {
+	public void setLatitude(double latitude) {
 		this.latitude = latitude;
 	}
 
-	public String getLongitude() {
+	public double getLongitude() {
 		return longitude;
 	}
 
-	public void setLongitude(String longitude) {
+	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
 
@@ -112,9 +112,6 @@ public class Mapa implements Serializable {
 			result += "logradouro: " + logradouro;
 		if (numero != null && !numero.trim().isEmpty())
 			result += ", numero: " + numero;
-		if (latitude != null && !latitude.trim().isEmpty())
-			result += ", latitude: " + latitude;
-		if (longitude != null && !longitude.trim().isEmpty())
 			result += ", longitude: " + longitude;
 		return result;
 	}
