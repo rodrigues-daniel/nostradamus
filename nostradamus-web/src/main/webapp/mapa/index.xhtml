@@ -2,21 +2,52 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui" 
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 
 	<title>Mapa</title>
 
+
+
+
 </h:head>
 <h:body>
-	<h:form>
-	<h:panelGrid columns="0">
-		Logradouro <h:inputText  value="#{novoMapa.logradouro}"/>		
-		Latitude: <h:inputText  value="#{novoMapa.latitude}" />
-		Longitude: <h:inputText value="#{novoMapa.longitude}" />
-		<h:commandButton    action="#{mapaConroller.registrar}"  value="Registrar" />	
-	</h:panelGrid>	 
-	</h:form>
+
+
+	<b:container fluid="true">
+		<b:form>
+			<b:row>
+
+				<b:column medium-screen="4">
+					Logradouro: <b:inputText value=" #{novoMapa.logradouro}" />
+
+				</b:column>
+			</b:row>
+
+			<b:row>
+				<b:column medium-screen="4">
+					Latitude: <b:inputText value="#{novoMapa.latitude}" />
+				</b:column>
+			</b:row>
+
+			<b:row>
+
+				<b:column medium-screen="4">
+					Longitude: <b:inputText value="#{novoMapa.longitude}" />
+				</b:column>
+			</b:row>
+
+			<b:row>
+				<b:column medium-screen="4">
+					<b:commandButton action="#{mapaConroller.registrar}" look="primary"
+						value="Registrar" />
+				</b:column>
+			</b:row>
+		</b:form>
+	</b:container>
+
 </h:body>
 </html>
