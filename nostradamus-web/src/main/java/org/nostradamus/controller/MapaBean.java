@@ -34,9 +34,11 @@ public class MapaBean {
 
 		marcas = repository.getListMapa();
 
-		for (int i = 0; i < 4; i++) {
+		for (Mapa mapa : marcas) {
+			
+			System.out.println("foi");
 
-			mapaModel.addOverlay(new Marker(new LatLng(-5.744102, -35.240420), "M" + i));
+			mapaModel.addOverlay(new Marker(new LatLng(mapa.getLatitude(), mapa.getLongitude()), mapa.getLogradouro()));
 		}
 
 	}
