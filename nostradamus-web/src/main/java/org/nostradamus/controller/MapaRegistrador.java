@@ -1,6 +1,7 @@
 package org.nostradamus.controller;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
@@ -11,7 +12,7 @@ import org.nostradamus.service.Registrador;
 import org.nostradamus.model.Mapa;
 
 @Model
-public class MapaConroller {
+public class MapaRegistrador {
 
 	@Inject
 	private Registrador registrador;
@@ -20,25 +21,38 @@ public class MapaConroller {
 	
 	
 	
-	public void registrar() throws Exception{
+	public String registrar() throws Exception{
 		
 		registrador.registrar(novoMapa);
 		System.out.println("Registrado!");
+		
+		
+		return "lista";
 	}
 	
 	
 	
 
-	@Produces
-	@Named
+	
+	
 	public Mapa getNovoMapa() {
+		
+		
 		return novoMapa;
 	}
 
 	
 	@PostConstruct
 	public void initNovoMapa() {
+		novoMapa();
+	}
+	
+	
+	private void  novoMapa(){
 		novoMapa = new Mapa();
 	}
+	
+	
+	
 
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Prime One</title>
+	<h:outputStylesheet name="css/bootstrap.min.css" />
+</h:head>
+<h:body>
+
+	<div class="ui-g">
+		<h:form>
+
+
+			<p:panelGrid columns="2">
+				<f:facet name="header">
+			Novo Registro
+		</f:facet>
+			Logradouro: <p:inputText value="#{mapaRegistrador.novoMapa.logradouro}" />
+			Latitude:   <p:inputText value="#{mapaRegistrador.novoMapa.latitude}"/>
+			Longitude:  <p:inputText value="#{mapaRegistrador.novoMapa.longitude}"/>
+
+				<p:commandButton value="salvar"  action="#{mapaRegistrador.registrar}"/>
+			</p:panelGrid>
+			<h:commandLink action="index" value="Voltar" />
+
+
+
+
+
+
+		</h:form>
+	</div>
+</h:body>
+</h:html>
