@@ -18,7 +18,6 @@ import org.primefaces.model.map.DefaultMapModel;
 import org.primefaces.model.map.LatLng;
 
 @Model
-@ApplicationScoped
 public class MapaBean {
 
 	@Inject
@@ -30,16 +29,7 @@ public class MapaBean {
 
 	@PostConstruct
 	public void initMapaModel() {
-		mapaModel = new DefaultMapModel();
-
-		marcas = repository.getListMapa();
-
-		for (Mapa mapa : marcas) {
-			
-			System.out.println("foi");
-
-			mapaModel.addOverlay(new Marker(new LatLng(mapa.getLatitude(), mapa.getLongitude()), mapa.getLogradouro()));
-		}
+		init();
 
 	}
 
@@ -48,6 +38,19 @@ public class MapaBean {
 	public MapModel getMapaModel() {
 
 		return mapaModel;
+	}
+
+	private void init() {
+		mapaModel = new DefaultMapModel();
+
+		marcas = repository.getListMapa();
+
+		for (Mapa mapa : marcas) {
+
+			System.out.println("foi");
+
+			mapaModel.addOverlay(new Marker(new LatLng(mapa.getLatitude(), mapa.getLongitude()), mapa.getLogradouro()));
+		}
 	}
 
 }
