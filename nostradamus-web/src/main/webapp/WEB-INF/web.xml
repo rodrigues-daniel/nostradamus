@@ -51,10 +51,10 @@
 		<param-name>primefaces.FONT_AWESOME</param-name>
 		<param-value>true</param-value>
 	</context-param>
-	
-	
-	
-	
+
+
+
+
 	<!-- The BootsFaces_THEME context-param controls the loading of the Themes -->
 	<!-- The default is Bootstrap, the valid values are a Bootswach Theme name 
 		(lowercase) or "custom". If custom is chosen, you will have to provide your 
@@ -75,12 +75,21 @@
 		<param-name>BootsFaces_THEME</param-name>
 		<param-value>paper</param-value>
 	</context-param>
-	
 
 
 
-	 
 
+
+	<servlet>
+		<servlet-name>Push Servlet</servlet-name>
+		<servlet-class>org.primefaces.push.PushServlet</servlet-class>	
+		<load-on-startup>1</load-on-startup>	
+		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Push Servlet</servlet-name>
+		<url-pattern>/primepush/*</url-pattern>
+	</servlet-mapping>
 
 
 

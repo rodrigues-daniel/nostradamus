@@ -1,31 +1,51 @@
 package org.nostradamus.controller;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Model;
+import javax.enterprise.inject.Produces;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.primefaces.push.EventBus;
 import org.primefaces.push.EventBusFactory;
 
-@Model
+@Named
+@ApplicationScoped
 public class MapaWebSocket {
 
 	private volatile int contador;
 
-	@Named
+	@Inject
+	private EventBus eventbus;
+
 	public int getContador() {
 		return contador;
 	}
 
-	public void setContador(int contador) {
-		this.contador = contador;
+	@PostConstruct
+	public void initContador() {
+
+		contador = 0;
+
+	}
+
+	@Produces
+	public EventBus sendEvento() {
+
+		 
+		return EventBusFactory.getDefault().eventBus();
+
 	}
 
 	public void incrementador() {
 		contador++;
+	
 
-		EventBus eventbus = new EventBusFactory().getDefault().eventBus();
-		eventbus.publish("/contador", String.valueOf(contador));
+		eventbus.publish("/atualizar",contador);
+		 
+		
 
 	}
 

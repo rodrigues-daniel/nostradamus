@@ -12,13 +12,18 @@
 <h:body>
 
 	<h:form id="form">
-		<h:outputText id="out" value="#{mapaWebSocket.contador}" />
-		<p:commandButton value="Click"
+		<h:outputText id="out" value="#{mapaWebSocket.contador}"
+			styleClass="mapa-display" />
+		<p:commandButton value="click"
 			actionListener="#{mapaWebSocket.incrementador}" />
 	</h:form>
-	<p:socket channel="/contador">
-		<p:ajax event="message" update="form:out" />
-	</p:socket>
+	<p:socket onMessage="handleMessage" channel="/atualizar" />
+
+	<script type="text/javascript">
+function handleMessage(data) {
+$('.mapa-display').text(data);
+}
+</script>
 
 </h:body>
 </h:html>
