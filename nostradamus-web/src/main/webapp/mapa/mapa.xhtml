@@ -16,7 +16,7 @@
 
 		<p:gmap id="mapa" center="-5.827391, -35.260487" zoom="11" type="MAP"
 			style="width:800px;height:600px" model="#{mapaModel}"
-			widgetVar="mapsat"   draggable="true"/>
+			widgetVar="mapsat"   draggable="true" />
 
 	</h:form>
 
@@ -32,6 +32,8 @@ function handleMessage() {
 	 currentMarker = new google.maps.Marker({
 	                position:new google.maps.LatLng(-5.335163,-35.309202)
 	            });
+
+	 currentMarker.setDraggable(true);
 	 
  PF('mapsat').addOverlay(currentMarker);
 

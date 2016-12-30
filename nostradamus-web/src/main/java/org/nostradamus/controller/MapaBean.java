@@ -48,8 +48,10 @@ public class MapaBean {
 		for (Mapa mapa : marcas) {
 
 			System.out.println("foi");
-
-			mapaModel.addOverlay(new Marker(new LatLng(mapa.getLatitude(), mapa.getLongitude()), mapa.getLogradouro()));
+			 
+		      
+				   
+			mapaModel.addOverlay(new Marker(new LatLng(mapa.getLatitude(), mapa.getLongitude()), mapa.getLogradouro(),"M2"));
 		}
 	}
 
