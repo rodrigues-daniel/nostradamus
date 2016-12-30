@@ -1,10 +1,9 @@
 package org.nostradamus.controller;
 
-import java.util.Iterator;
+
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
@@ -47,9 +46,7 @@ public class MapaBean {
 
 		for (Mapa mapa : marcas) {
 
-			System.out.println("foi");
-			 
-		      
+			System.out.println("foi");	      
 				   
 			mapaModel.addOverlay(new Marker(new LatLng(mapa.getLatitude(), mapa.getLongitude()), mapa.getLogradouro(),"M2"));
 		}
